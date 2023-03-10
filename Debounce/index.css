@@ -1,0 +1,41 @@
+:root {
+    --black: #1e2127;
+    --red: #e06c75;
+    --green: #98c379;
+    --yellow: #d19a66;
+    --blue: #61afef;
+    --purple: #c678dd;
+    --cyan: #56b6c2;
+    --white: #abb2bf;
+    --brightBlack: #5c6370;
+    --brightRed: #e06c75;
+    --brightGreen: #98c379;
+    --brightYellow: #d19a66;
+    --brightBlue: #61afef;
+    --brightPurple: #c678dd;
+    --brightCyan: #56b6c2;
+    --brightWhite: #ffffff;
+    --background: #1e2127;
+    --foreground: #abb2bf;
+
+}
+
+body {
+    background-color: var(--background);
+    margin: 0;
+}
+
+.inputBox_container {
+    margin: 20% auto 0 auto;
+    width: fit-content;
+}
+
+.inputBox {
+    background-color: var(--foreground);
+    outline: none;
+    border: 0;
+    border-radius: 10px;
+    padding: 10px 15px;
+    width: 500px;
+    font-size: 25px;
+}
