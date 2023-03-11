@@ -20,22 +20,86 @@
 
 }
 
+.noselect {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.yesselect {
+    user-select: all;
+    -webkit-user-select: all;
+    -moz-user-select: all;
+    -ms-user-select: all;
+}
+
 body {
     background-color: var(--background);
     margin: 0;
 }
 
-.inputBox_container {
+.form {
     margin: 20% auto 0 auto;
     width: fit-content;
+    width: 85%;
+    max-width: 500px;
+    background-color: var(--brightBlack);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.inputBox_container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    outline: solid 1px var(--foreground);
+}
+
+.search_icon {
+    height: 25px;
+    padding: 10px 15px;
 }
 
 .inputBox {
-    background-color: var(--foreground);
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: transparent;
+    color: var(--brightWhite);
     outline: none;
+    width: 100%;
     border: 0;
-    border-radius: 10px;
-    padding: 10px 15px;
-    width: 500px;
+    padding: 10px 15px 10px 0;
     font-size: 25px;
+}
+
+::placeholder {
+    color: var(--foreground);
+}
+
+::-ms-input-placeholder {
+    color: var(--foreground);
+}
+
+.selection {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--brightWhite);
+    padding: 10px 15px;
+    font-size: 25px;
+    padding-left: 55px;
+    border-radius: 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.allowed {
+    cursor: pointer;
+}
+
+.allowed:hover {
+    background-color: #abb2bf;
+}
+
+.not_allowed {
+    cursor: not-allowed;
 }
