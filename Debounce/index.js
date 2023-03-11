@@ -3,20 +3,45 @@ const api_url = "https://640ad5ee81d8a32198d1c6ae.mockapi.io/api/products";
 
 var settings = {
     placeholder: "Search For Products",
-    lengthLimit: 5,
-    timeoutMs: 500
+    lengthLimit: 10,
+    timeoutMs: 500,
+    debugMode: false
 };
 
 const input = document.getElementById("inputBox");
 const productsSelections = document.getElementById("productsSelections");
+const timeoutTimeInput = document.getElementById("timeoutTime");
+const suggestionLimitInput = document.getElementById("suggestionLimit");
+const debugModeInput = document.getElementById("debugMode");
 var timeoutVariable;
 
 window.onload = () => {
-    input.focus();
     input.setAttribute("placeholder", "Search For Products");
 };
 
+timeoutTimeInput.addEventListener("input", (rawInput) => {
+    log("Set suggestion timeout to: " + rawInput.target.value);
+    return settings.timeoutMs = rawInput.target.value;
+});
+suggestionLimitInput.addEventListener("input", (rawInput) => {
+    log("Set suggestion quantity limit to: " + rawInput.target.value);
+    return settings.lengthLimit = rawInput.target.value;
+});
+debugModeInput.addEventListener("input", (rawInput) => {
+    console.log("Set debug mode to: " + rawInput.target.checked);
+    return settings.debugMode = rawInput.target.checked;
+});
+
 input.addEventListener("focus", () => {
+    const previousSelections = [...productsSelections.children];
+
+    if (settings.lengthLimit < previousSelections.length) {
+        productsSelections.innerHTML = "";
+        for (var i = 0; i < settings.lengthLimit; i++) {
+            productsSelections.appendChild(previousSelections[i]);
+        }
+    }
+
     searchProducts(input.value);
     return productsSelections.style = "";
 });
@@ -28,7 +53,6 @@ input.addEventListener("blur", () => {
 
 input.addEventListener("input", (rawInput) => {
     const inputValue = rawInput.target.value;
-
     searchProducts(inputValue);
 });
 
@@ -36,16 +60,13 @@ input.addEventListener("input", (rawInput) => {
 function searchProducts(inputValue) {
     clearTimeout(timeoutVariable);
 
-    const lengthLimit = settings.lengthLimit ?? 10;
-    const timeoutMs = settings.timeoutMs ?? 500;
-
     if (input.value.length === 0) {
-        console.log("Search bar is empty");
+        log("Search bar is empty");
         return productsSelections.innerHTML = "";
     };
 
     timeoutVariable = setTimeout(async () => {
-        console.log("User search for: " + inputValue);
+        log(`Search for: ${inputValue}\nSelections Limit: ${settings.lengthLimit}`);
         var productsList = await api(api_url);
         productsList = productsList
             .map(product => product.name)
@@ -53,23 +74,19 @@ function searchProducts(inputValue) {
             .sort((a, b) => a.length - b.length)
             .sort((a, b) => a.toLowerCase().indexOf(inputValue.toLowerCase()) - b.toLowerCase().indexOf(inputValue.toLowerCase()));
 
+        log(productsList);
+
         productsList = productsList.map(productName => `<li class="selection allowed" onclick="setInput(this.textContent)">${productName}</li>`);
 
         if (input.value.length !== 0 && productsList.length === 0) {
-            console.log("No search result");
+            log("No search result");
             productsSelections.innerHTML = `<li class="selection not_allowed">No Result</li>`;
         }
         else {
-            productsList.length = lengthLimit;
+            productsList.length = settings.lengthLimit;
             productsSelections.innerHTML = productsList.join("");
         };
-    }, timeoutMs);
-}
-
-function setInput(text) {
-    input.value = text;
-    input.focus();
-    return productsSelections.innerHTML = "";
+    }, settings.timeoutMs);
 }
 
 async function api(url) {
@@ -79,4 +96,22 @@ async function api(url) {
     });
 
     return await response.json();
+}
+
+function log(message) {
+    if (settings.debugMode) {
+        console.log(message);
+    };
+}
+
+function setInput(text) {
+    input.value = text;
+    input.focus();
+    return productsSelections.innerHTML = "";
+}
+
+function setTimeoutValue(thisElement, nextElement) {
+    const seconds = Math.floor(thisElement.value / 1000);
+    const milliseconds = Math.floor((thisElement.value % 1000) / 100);
+    return nextElement.value = seconds + (milliseconds === 0 ? "" : ("." + milliseconds)) + "s";
 }

@@ -12,12 +12,42 @@
 </head>
 
 <body>
-    <div class="form" id="form">
-        <div class="inputBox_container">
-            <img class="search_icon" src="search.svg" alt="search icon">
-            <input class="inputBox" id="inputBox" type="text">
+    <h1 class="title">Api Debouncing</h1>
+    <div class="fields">
+        <fieldset class="settings">
+            <legend>Settings</legend>
+            <div class="setting_container">
+                <p>Suggestion timeout</p>
+                <div class="inputField">
+                    <input id="timeoutTime" min="200" max="2000" value="500" step="100" type="range"
+                        oninput="setTimeoutValue(this, this.nextElementSibling)">
+                    <output>0.5s</output>
+                </div>
+            </div>
+            <div class="setting_container">
+                <p>Suggestion quantity limit</p>
+                <div class="inputField">
+                    <input id="suggestionLimit" min="1" max="20" value="10" type="range"
+                        oninput="this.nextElementSibling.value = this.value">
+                    <output>10</output>
+                </div>
+            </div>
+            <br>
+            <div class="setting_container">
+                <p>Debug mode</p>
+                <div>
+                    <input id="debugMode" class="switch" type="checkbox" />
+                    <label class="switchLabel" for="debugMode"></label>
+                </div>
+            </div>
+        </fieldset>
+        <div class="form" id="form">
+            <div class="inputBox_container">
+                <img class="search_icon" src="search.svg" alt="search icon">
+                <input class="inputBox" id="inputBox" type="text" autofocus>
+            </div>
+            <ol class="productsSelections noselect" id="productsSelections"></ol>
         </div>
-        <ul class="productsSelections noselect" id="productsSelections"></ul>
     </div>
 </body>
 

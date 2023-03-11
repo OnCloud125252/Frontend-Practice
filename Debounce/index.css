@@ -17,7 +17,6 @@
     --brightWhite: #ffffff;
     --background: #1e2127;
     --foreground: #abb2bf;
-
 }
 
 .noselect {
@@ -35,15 +34,132 @@
 }
 
 body {
+    font-family: Arial, Helvetica, sans-serif;
     background-color: var(--background);
+
+    margin: 15vh auto;
+    width: 90%;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+:root {
+    scrollbar-color: transparent !important;
+    scrollbar-width: none !important;
+}
+
+.title {
+    font-size: 45px;
+    color: var(--brightWhite);
+    text-align: center;
+    margin-bottom: 10vh;
+}
+
+.fields {
+    display: flex;
+    gap: 6vw;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.settings legend {
+    color: var(--brightWhite);
+    padding: 5px;
+    font-size: 25px;
+}
+
+.settings {
+    width: 500px;
+    border: 2px solid var(--brightBlack);
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin-top: -20px;
+    padding: 20px 30px 30px 30px;
+    color: var(--foreground);
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.setting_container {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.inputField {
+    font-size: 20px;
+    white-space: nowrap;
+}
+
+.setting_container .inputField input {
     margin: 0;
+    display: inline-block;
+}
+
+.setting_container .inputField output {
+    display: inline-block;
+    width: 30px;
+}
+
+:root {
+    --switch_gap: 2px;
+    --switch_width: 40px;
+    --switch_height: 20px;
+}
+
+.switch {
+    display: none;
+}
+
+.switchLabel {
+    top: 0;
+    cursor: pointer;
+    width: var(--switch_width);
+    height: var(--switch_height);
+    background: var(--brightRed);
+    display: block;
+    border-radius: 100px;
+    position: relative;
+}
+
+.switchLabel:after {
+    content: '';
+    position: absolute;
+    top: var(--switch_gap);
+    left: var(--switch_gap);
+    width: calc(var(--switch_height) - var(--switch_gap) - var(--switch_gap));
+    height: calc(var(--switch_height) - var(--switch_gap) - var(--switch_gap));
+    background: var(--brightBlack);
+    border-radius: 90px;
+    transition: 0.3s;
+}
+
+.switch:checked+.switchLabel {
+    background: var(--brightGreen);
+}
+
+.switch:checked+.switchLabel:after {
+    left: calc(100% - var(--switch_gap));
+    transform: translateX(-100%);
 }
 
 .form {
-    margin: 20% auto 0 auto;
-    width: fit-content;
-    width: 85%;
-    max-width: 500px;
+    width: 500px;
+    height: fit-content;
     background-color: var(--brightBlack);
     border-radius: 10px;
     overflow: hidden;
@@ -62,7 +178,6 @@ body {
 }
 
 .inputBox {
-    font-family: Arial, Helvetica, sans-serif;
     background-color: transparent;
     color: var(--brightWhite);
     outline: none;
