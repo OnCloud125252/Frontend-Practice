@@ -1,45 +1,8 @@
-:root {
-    --black: #1e2127;
-    --red: #e06c75;
-    --green: #98c379;
-    --yellow: #d19a66;
-    --blue: #61afef;
-    --purple: #c678dd;
-    --cyan: #56b6c2;
-    --white: #abb2bf;
-    --brightBlack: #5c6370;
-    --brightRed: #e06c75;
-    --brightGreen: #98c379;
-    --brightYellow: #d19a66;
-    --brightBlue: #61afef;
-    --brightPurple: #c678dd;
-    --brightCyan: #56b6c2;
-    --brightWhite: #ffffff;
-    --background: #1e2127;
-    --foreground: #abb2bf;
-}
-
-.noselect {
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-}
-
-.yesselect {
-    user-select: all;
-    -webkit-user-select: all;
-    -moz-user-select: all;
-    -ms-user-select: all;
-}
-
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: var(--background);
-
     margin: 15vh auto;
     width: 90%;
-
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
@@ -175,6 +138,7 @@ body {
 .search_icon {
     height: 25px;
     padding: 10px 15px;
+    fill: var(--foreground);
 }
 
 .inputBox {
