@@ -1,0 +1,22 @@
+body {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+}
+
+body>header {
+    grid-area: header;
+}
+
+body>main {
+    grid-area: main;
+}
+
+body>footer {
+    grid-area: footer;
+}
