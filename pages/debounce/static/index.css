@@ -1,8 +1,6 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: var(--background);
-    margin: 15vh auto;
-    width: 90%;
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
@@ -16,16 +14,49 @@ body {
     scrollbar-width: none !important;
 }
 
+body>main {
+    margin: 7vh auto;
+    width: 90%;
+}
+
+.backToHome {
+    display: block;
+    width: fit-content;
+    margin: 2vh 0 0 10%;
+    cursor: pointer;
+    padding: 15px 15px 15px 40px;
+    text-decoration: none;
+    background-color: var(--selectionBackground);
+    border-radius: 10px;
+    color: var(--foreground);
+    position: relative;
+}
+
+.backToHome:hover {
+    background-color: var(--brightBlack);
+}
+
+.backToHome::before {
+    position: absolute;
+    content: "<<";
+    transition-duration: 0.3s;
+    left: 15px;
+}
+
+.backToHome:hover::before {
+    left: 10px;
+}
+
 .title {
     font-size: 45px;
     color: var(--brightWhite);
     text-align: center;
-    margin-bottom: 10vh;
+    margin-bottom: 6vh;
 }
 
 .fields {
     display: flex;
-    gap: 6vw;
+    gap: 3vw;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
@@ -181,4 +212,27 @@ body {
 
 .not_allowed {
     cursor: not-allowed;
+}
+
+.github_icon {
+    display: flex;
+    width: fit-content;
+    margin: auto;
+    margin-bottom: 10px;
+    align-items: center;
+    flex-direction: row;
+    font-size: 20px;
+    text-decoration: none;
+    color: var(--foreground);
+}
+
+.github_icon>svg {
+    display: inline-block;
+    width: auto;
+    height: 40px;
+}
+
+.github_icon>p {
+    display: inline-block;
+    white-space: nowrap;
 }
