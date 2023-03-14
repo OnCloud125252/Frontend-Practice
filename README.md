@@ -6,6 +6,8 @@ Using these techniques may help *improve page load times*, *decrease server load
 ## Debouncing
 A technique used to prevent a server from being overwhelmed with requests by limiting the number of requests that can be made within a certain time frame.  
 
+[Try It Out!](https://frontendskills.on-cloud.eu.org/debounce/)  
+
 In this example, debouncing was used to prevent the search function from being triggered too often while the user is typing.  
 There's a settings panel that allows the user to choose how many seconds should elapse before triggering the search function, as well as an option to specify how many search results should be shown.
 
