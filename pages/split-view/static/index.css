@@ -14,6 +14,62 @@ body>main {
     margin-bottom: 5vh;
 }
 
+.fields {
+    display: flex;
+    gap: 2vh;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.settings legend {
+    color: var(--brightWhite);
+    padding: 5px;
+    font-size: 25px;
+}
+
+.settings {
+    width: 100%;
+    max-width: 500px;
+    border: 2px solid var(--brightBlack);
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin-top: -20px;
+    padding: 20px 30px 30px 30px;
+    color: var(--foreground);
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.setting_container {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.inputField {
+    font-size: 20px;
+    white-space: nowrap;
+}
+
+.setting_container .inputField input {
+    margin: 0;
+    display: inline-block;
+}
+
+.setting_container .inputField output {
+    display: inline-block;
+    width: 80px;
+}
+
 .container {
     position: relative;
     width: 100%;

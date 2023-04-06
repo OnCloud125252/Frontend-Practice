@@ -1,6 +1,6 @@
-// Make the DIV element draggable:
-dragElement(document.getElementById("controlBar"));
+const controlBar = document.getElementById("controlBar");
 
+dragElement(controlBar);
 function dragElement(elmnt) {
     let pos1 = 0,
         pos2 = 0;
@@ -37,4 +37,10 @@ function dragElement(elmnt) {
         document.removeEventListener("mousemove", elementDrag);
         document.removeEventListener("touchmove", elementDrag);
     }
+}
+
+function setColorValue(thisElement, nextElement) {
+    const selectedColor = thisElement.value;
+    controlBar.style = `--barColor: ${selectedColor}`;
+    return nextElement.value = selectedColor;
 }

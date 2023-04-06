@@ -21,15 +21,28 @@
     <main>
         <h1 class="pageTitle">Split View</h1>
         <h2 class="subTitle">Drag the bar to see magic happen!</h2>
-        <div class="container">
-            <div id="controlBar" class="controlBar"></div>
-            <div id="aPart" class="aPart">
-                <video autoPlay muted loop playsInline>
-                    <source src="static/Fauna.mp4" type="video/mp4" />
-                </video>
-            </div>
-            <div id="bPart" class="bPart">
-                <img src="static/Fauna.jpg" alt="" srcset="" draggable="false">
+        <div class="fields">
+            <fieldset class="settings">
+                <legend>Settings</legend>
+                <div class="setting_container">
+                    <p>Color of Bar</p>
+                    <div class="inputField">
+                        <input id="barColor" type="color" value="#5c6370"
+                            oninput="setColorValue(this, this.nextElementSibling)">
+                        <output>#5c6370</output>
+                    </div>
+                </div>
+            </fieldset>
+            <div class="container">
+                <div id="controlBar" class="controlBar"></div>
+                <div id="aPart" class="aPart">
+                    <video autoPlay muted loop playsInline>
+                        <source src="static/Fauna.mp4" type="video/mp4" />
+                    </video>
+                </div>
+                <div id="bPart" class="bPart">
+                    <img src="static/Fauna.jpg" alt="" srcset="" draggable="false">
+                </div>
             </div>
         </div>
     </main>
