@@ -16,8 +16,8 @@ body>main {
 
 .container {
     position: relative;
-    --containerHeight: 50vh;
-    height: var(--containerHeight);
+    width: 100%;
+    max-width: 1500px;
     aspect-ratio: 16 / 9;
     margin: auto;
     overflow: hidden;
@@ -26,7 +26,7 @@ body>main {
 }
 
 .controlBar {
-    --controlBarHeight: 60px;
+    --controlBarHeight: 45px;
     position: absolute;
     z-index: 9;
     cursor: col-resize;
@@ -41,7 +41,7 @@ body>main {
     content: "<";
     color: var(--barColor);
     text-align: right;
-    font-size: 35px;
+    font-size: 30px;
     font-weight: 700;
     font-family: "Poppins", sans-serif;
     display: flex;
@@ -63,7 +63,7 @@ body>main {
     content: ">";
     color: var(--barColor);
     text-align: left;
-    font-size: 35px;
+    font-size: 30px;
     font-weight: 700;
     font-family: "Poppins", sans-serif;
     display: flex;
