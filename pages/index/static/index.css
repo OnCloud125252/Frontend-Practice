@@ -1,6 +1,4 @@
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: var(--background);
+body>main {
     margin: 10vh auto;
     width: 90%;
 }
@@ -20,14 +18,18 @@ body {
 }
 
 .cards_container {
-    display: grid;
+    display: flex;
     justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 20px;
 }
 
 .card {
     position: relative;
     cursor: pointer;
-    width: 300px;
+    width: 350px;
     box-sizing: border-box;
     padding: 30px;
     text-decoration: none;

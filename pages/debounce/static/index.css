@@ -1,57 +1,6 @@
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: var(--background);
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-
-::-webkit-scrollbar {
-    width: 0;
-}
-
-:root {
-    scrollbar-color: transparent !important;
-    scrollbar-width: none !important;
-}
-
 body>main {
     margin: 7vh auto;
     width: 90%;
-}
-
-.backToHome {
-    display: block;
-    width: fit-content;
-    margin: 2vh 0 0 10%;
-    cursor: pointer;
-    padding: 15px 15px 15px 40px;
-    text-decoration: none;
-    background-color: var(--selectionBackground);
-    border-radius: 10px;
-    color: var(--foreground);
-    position: relative;
-}
-
-.backToHome:hover {
-    background-color: var(--brightBlack);
-}
-
-.backToHome::before {
-    position: absolute;
-    content: "<<";
-    transition-duration: 0.3s;
-    left: 15px;
-}
-
-.backToHome:hover::before {
-    left: 10px;
-}
-
-.title {
-    font-size: 45px;
-    color: var(--brightWhite);
-    text-align: center;
-    margin-bottom: 6vh;
 }
 
 .fields {
@@ -212,54 +161,4 @@ body>main {
 
 .not_allowed {
     cursor: not-allowed;
-}
-
-.github_icon {
-    display: flex;
-    width: fit-content;
-    padding: 5px 8px;
-    margin: auto;
-    margin-bottom: 25px;
-    align-items: center;
-    flex-direction: row;
-    font-size: 20px;
-    text-decoration: none;
-    color: var(--foreground);
-    background-color: #e0e0e0;
-    border-radius: 5px;
-}
-
-.github_icon>lottie-player {
-    display: inline-block;
-    width: auto;
-    margin-right: 5px;
-    height: 35px;
-}
-
-.github_icon>span {
-    color: #000000;
-}
-
-.github_icon>p {
-    position: relative;
-    display: inline-block;
-    white-space: nowrap;
-    color: #000000;
-}
-
-.github_icon>p::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition-duration: 0.5s;
-    background-color: #000000;
-}
-
-.github_icon:hover>p::after {
-    transform: scaleX(100%);
 }
