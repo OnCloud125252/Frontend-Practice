@@ -19,7 +19,8 @@ body>main {
 }
 
 .settings {
-    width: 500px;
+    width: 100%;
+    max-width: 500px;
     border: 2px solid var(--brightBlack);
     border-radius: 10px;
     box-sizing: border-box;

@@ -23,7 +23,7 @@ body>main {
     align-content: center;
     flex-wrap: wrap;
     flex-direction: row;
-    gap: 20px;
+    gap: 3vw;
 }
 
 .card {
