@@ -41,6 +41,9 @@ function dragElement(elmnt) {
 
 function setColorValue(thisElement, nextElement) {
     const selectedColor = thisElement.value;
-    controlBar.style = `--barColor: ${selectedColor}`;
-    return nextElement.value = selectedColor;
+
+    return [
+        document.querySelector(":root").style.setProperty("--barColor", selectedColor),
+        nextElement.value = selectedColor
+    ];
 }

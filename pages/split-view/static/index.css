@@ -1,6 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
 
 
+:root {
+    --barColor: #5c6370;
+}
+
 body>main {
     margin: 7vh auto;
     width: 90%;
@@ -86,7 +90,6 @@ body>main {
     position: absolute;
     z-index: 9;
     cursor: col-resize;
-    --barColor: var(--brightBlack);
     background-color: var(--barColor);
     left: 50%;
     height: 100%;
@@ -109,7 +112,7 @@ body>main {
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     height: var(--controlBarHeight);
-    width: calc(var(--controlBarHeight) / 2);
+    width: calc(var(--controlBarHeight) / 2 + 15px);
     outline: solid 3px var(--barColor);
     border-top-left-radius: calc(var(--controlBarHeight) / 2);
     border-bottom-left-radius: calc(var(--controlBarHeight) / 2);
@@ -131,7 +134,7 @@ body>main {
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     height: var(--controlBarHeight);
-    width: calc(var(--controlBarHeight) / 2);
+    width: calc(var(--controlBarHeight) / 2 + 15px);
     outline: solid 3px var(--barColor);
     border-top-right-radius: calc(var(--controlBarHeight) / 2);
     border-bottom-right-radius: calc(var(--controlBarHeight) / 2);
