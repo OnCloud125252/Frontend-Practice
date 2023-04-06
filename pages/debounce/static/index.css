@@ -118,7 +118,8 @@ body>main {
 
 .search_icon {
     height: 25px;
-    padding: 10px 15px;
+    aspect-ratio: 1;
+    padding: 0 10px 0 15px;
     fill: var(--foreground);
 }
 
