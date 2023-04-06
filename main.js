@@ -8,8 +8,7 @@ import index from "./pages/index/route.js";
 
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const host = "0.0.0.0";
-const port = 5000;
+const port = 8080;
 
 const main = express();
 
@@ -19,6 +18,6 @@ main.use("/split-view", split_view);
 main.use("/debounce", debounce);
 main.use("/", index);
 
-main.listen(port, host, () => {
+main.listen(port, () => {
     console.log(`Listening on port ${port}`)
 });
