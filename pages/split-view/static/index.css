@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
+
+
+body>main {
+    margin: 7vh auto;
+    width: 90%;
+}
+
+.subTitle {
+    font-size: 20px;
+    text-align: center;
+    color: var(--brightBlack);
+    margin-top: -4vh;
+    margin-bottom: 5vh;
+}
+
+.container {
+    position: relative;
+    --containerHeight: 50vh;
+    height: var(--containerHeight);
+    aspect-ratio: 16 / 9;
+    margin: auto;
+    overflow: hidden;
+    border: none;
+    border-radius: 10px;
+}
+
+.controlBar {
+    --controlBarHeight: 60px;
+    position: absolute;
+    z-index: 9;
+    cursor: col-resize;
+    --barColor: var(--brightBlack);
+    background-color: var(--barColor);
+    left: 50%;
+    height: 100%;
+    width: 5px;
+}
+
+.controlBar::before {
+    content: "<";
+    color: var(--barColor);
+    text-align: right;
+    font-size: 35px;
+    font-weight: 700;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    height: var(--controlBarHeight);
+    width: calc(var(--controlBarHeight) / 2);
+    outline: solid 3px var(--barColor);
+    border-top-left-radius: calc(var(--controlBarHeight) / 2);
+    border-bottom-left-radius: calc(var(--controlBarHeight) / 2);
+}
+
+.controlBar::after {
+    content: ">";
+    color: var(--barColor);
+    text-align: left;
+    font-size: 35px;
+    font-weight: 700;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    height: var(--controlBarHeight);
+    width: calc(var(--controlBarHeight) / 2);
+    outline: solid 3px var(--barColor);
+    border-top-right-radius: calc(var(--controlBarHeight) / 2);
+    border-bottom-right-radius: calc(var(--controlBarHeight) / 2);
+}
+
+.aPart {
+    position: absolute;
+    z-index: 8;
+    height: 100%;
+    left: 0;
+    width: 50%;
+    overflow: hidden;
+}
+
+.aPart video {
+    object-fit: cover;
+    height: 100%;
+}
+
+.bPart {
+    position: absolute;
+    z-index: 7;
+    height: 100%;
+    left: 0;
+    width: 100%;
+}
+
+.bPart img {
+    object-fit: cover;
+    height: 100%;
+}

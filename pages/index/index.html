@@ -6,26 +6,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frontend Skills</title>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <link rel="stylesheet" href="../global/index.css">
     <link rel="stylesheet" href="../global/themes/OneDark.css">
+    <link rel="stylesheet" href="../global/layouts/sticky.css">
     <link rel="stylesheet" href="static/index.css">
     <!-- <script src="static/index.js" defer></script> -->
 </head>
 
 <body>
-    <h1 class="title">Welcome To Frontend Skills</h1>
-    <h2 class="subTitle">Click on any topic to try it out!</h2>
-    <div class="cards_container">
-        <a class="card" href="../debounce">
-            <h2 class="card_title">
-                Api Debouncing
-            </h2>
-            <p class="card_description">
-                A technique used to prevent a server from being overwhelmed with requests by limiting the
-                number of requests that can be made within a certain time frame.
+    <main>
+        <h1 class="title">Welcome To Frontend Skills</h1>
+        <h2 class="subTitle">Click on any topic to try it out!</h2>
+        <div class="cards_container">
+            <a class="card" href="../debounce">
+                <h2 class="card_title">
+                    Api Debouncing
+                </h2>
+                <p class="card_description">
+                    A technique used to prevent a server from being overwhelmed with requests by limiting the
+                    number of requests that can be made within a certain time frame.
+                </p>
+            </a>
+            <a class="card" href="../split-view">
+                <h2 class="card_title">
+                    Split View
+                </h2>
+                <p class="card_description">
+                    Creating a draggable vertical bar in an suare, which adjusts the size of two parts based on its
+                    position. It's often used to display the differences between two media content.
+                </p>
+            </a>
+        </div>
+    </main>
+    <footer>
+        <a class="github_icon" href="https://github.com/OnCloud125252/Frontend-Practice" target="_blank">
+            <lottie-player src="../global/github_icon_animation.json" speed="0.8" loop autoplay></lottie-player>
+            <span>
+                @
+            </span>
+            <p>
+                Frontend-Practice
             </p>
         </a>
-    </div>
+    </footer>
 </body>
 
 </html>

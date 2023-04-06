@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Split View | Frontend Skills</title>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <link rel="stylesheet" href="../global/index.css">
+    <link rel="stylesheet" href="../global/themes/OneDark.css">
+    <link rel="stylesheet" href="../global/layouts/sticky.css">
+    <link rel="stylesheet" href="static/index.css">
+    <script src="static/index.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <a class="backToHome" href="../index">Back To Home</a>
+    </header>
+    <main>
+        <h1 class="pageTitle">Split View</h1>
+        <h2 class="subTitle">Drag the bar to see magic happen!</h2>
+        <div class="container">
+            <div id="controlBar" class="controlBar"></div>
+            <div id="aPart" class="aPart">
+                <video autoPlay muted loop playsInline>
+                    <source src="static/Fauna.mp4" type="video/mp4" />
+                </video>
+            </div>
+            <div id="bPart" class="bPart">
+                <img src="static/Fauna.jpg" alt="" srcset="" draggable="false">
+            </div>
+        </div>
+    </main>
+    <footer>
+        <a class="github_icon" href="https://github.com/OnCloud125252/Frontend-Practice" target="_blank">
+            <lottie-player src="../global/github_icon_animation.json" speed="0.8" loop autoplay></lottie-player>
+            <span>
+                @
+            </span>
+            <p>
+                Frontend-Practice
+            </p>
+        </a>
+    </footer>
+</body>
+
+</html>
