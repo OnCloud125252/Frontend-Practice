@@ -1,0 +1,386 @@
+body>main {
+    margin: 6vh auto;
+    width: 90%;
+}
+
+.subTitle {
+    font-size: 20px;
+    text-align: center;
+    color: var(--brightBlack);
+    margin-bottom: 5vh;
+}
+
+.light {
+    animation: flash 0.1s infinite;
+}
+
+@keyframes flash {
+    0% {
+        background-color: #161924;
+    }
+
+    49% {
+        background-color: #161924;
+    }
+
+    50% {
+        background-color: #ffffff;
+    }
+
+    100% {
+        background-color: #ffffff;
+    }
+}
+
+.hoverLayer {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    height: 120px;
+    width: 240px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.hoverBox {
+    display: block;
+    height: 20px;
+    width: 20px;
+    z-index: 2;
+    transition-duration: 0.2s;
+}
+
+.a1:hover~button {
+    transform: translate(50px, 15px);
+}
+
+.a2:hover~button {
+    transform: translate(40px, 20px);
+}
+
+.a3:hover~button {
+    transform: translate(30px, 25px);
+}
+
+.a4:hover~button {
+    transform: translate(20px, 30px);
+}
+
+.a5:hover~button {
+    transform: translate(10px, 35px);
+}
+
+.a6:hover~button {
+    transform: translate(5px, 40px);
+}
+
+.a7:hover~button {
+    transform: translate(-5px, 40px);
+}
+
+.a8:hover~button {
+    transform: translate(-10px, 35px);
+}
+
+.a9:hover~button {
+    transform: translate(-20px, 30px);
+}
+
+.a10:hover~button {
+    transform: translate(-30px, 25px);
+}
+
+.a11:hover~button {
+    transform: translate(-40px, 20px);
+}
+
+.a12:hover~button {
+    transform: translate(-50px, 15px);
+}
+
+.b1:hover~button {
+    transform: translate(25px, 5px);
+}
+
+.b2:hover~button {
+    transform: translate(20px, 10px);
+}
+
+.b3:hover~button {
+    transform: translate(15px, 15px);
+}
+
+.b4:hover~button {
+    transform: translate(10px, 20px);
+}
+
+.b5:hover~button {
+    transform: translate(5px, 25px);
+}
+
+.b6:hover~button {
+    transform: translate(0px, 30px);
+}
+
+.b7:hover~button {
+    transform: translate(0px, 30px);
+}
+
+.b8:hover~button {
+    transform: translate(-5px, 25px);
+}
+
+.b9:hover~button {
+    transform: translate(-10px, 20px);
+}
+
+.b10:hover~button {
+    transform: translate(-15px, 15px);
+}
+
+.b11:hover~button {
+    transform: translate(-20px, 10px);
+}
+
+.b12:hover~button {
+    transform: translate(-25px, 5px);
+}
+
+.c1:hover~button {
+    transform: translate(60px, 10px);
+}
+
+.c2:hover~button {
+    transform: translate(50px, 20px);
+}
+
+.c3:hover~button {
+    transform: translate(40px, 30px);
+}
+
+.c4:hover~button {
+    transform: translate(30px, 40px);
+}
+
+.c5:hover~button {
+    transform: translate(20px, 50px);
+}
+
+.c6:hover~button {
+    transform: translate(10px, 60px);
+}
+
+.c7:hover~button {
+    transform: translate(-10px, 60px);
+}
+
+.c8:hover~button {
+    transform: translate(-20px, 50px);
+}
+
+.c9:hover~button {
+    transform: translate(-30px, 40px);
+}
+
+.c10:hover~button {
+    transform: translate(-40px, 30px);
+}
+
+.c11:hover~button {
+    transform: translate(-50px, 20px);
+}
+
+.c12:hover~button {
+    transform: translate(-60px, 10px);
+}
+
+.d1:hover~button {
+    transform: translate(60px, -10px);
+}
+
+.d2:hover~button {
+    transform: translate(50px, -20px);
+}
+
+.d3:hover~button {
+    transform: translate(40px, -30px);
+}
+
+.d4:hover~button {
+    transform: translate(30px, -40px);
+}
+
+.d5:hover~button {
+    transform: translate(20px, -50px);
+}
+
+.d6:hover~button {
+    transform: translate(10px, -60px);
+}
+
+.d7:hover~button {
+    transform: translate(-10px, -60px);
+}
+
+.d8:hover~button {
+    transform: translate(-20px, -50px);
+}
+
+.d9:hover~button {
+    transform: translate(-30px, -40px);
+}
+
+.d10:hover~button {
+    transform: translate(-40px, -30px);
+}
+
+.d11:hover~button {
+    transform: translate(-50px, -20px);
+}
+
+.d12:hover~button {
+    transform: translate(-60px, -10px);
+}
+
+.e1:hover~button {
+    transform: translate(50px, -15px);
+}
+
+.e2:hover~button {
+    transform: translate(40px, -20px);
+}
+
+.e3:hover~button {
+    transform: translate(30px, -25px);
+}
+
+.e4:hover~button {
+    transform: translate(20px, -30px);
+}
+
+.e5:hover~button {
+    transform: translate(10px, -35px);
+}
+
+.e6:hover~button {
+    transform: translate(5px, -40px);
+}
+
+.e7:hover~button {
+    transform: translate(-5px, -40px);
+}
+
+.e8:hover~button {
+    transform: translate(-10px, -35px);
+}
+
+.e9:hover~button {
+    transform: translate(-20px, -30px);
+}
+
+.e10:hover~button {
+    transform: translate(-30px, -25px);
+}
+
+.e11:hover~button {
+    transform: translate(-40px, -20px);
+}
+
+.e12:hover~button {
+    transform: translate(-50px, -15px);
+}
+
+.f1:hover~button {
+    transform: translate(25px, -5px);
+}
+
+.f2:hover~button {
+    transform: translate(20px, -10px);
+}
+
+.f3:hover~button {
+    transform: translate(15px, -15px);
+}
+
+.f4:hover~button {
+    transform: translate(10px, -20px);
+}
+
+.f5:hover~button {
+    transform: translate(5px, -25px);
+}
+
+.f6:hover~button {
+    transform: translate(0px, -30px);
+}
+
+.f7:hover~button {
+    transform: translate(0px, -30px);
+}
+
+.f8:hover~button {
+    transform: translate(-5px, -25px);
+}
+
+.f9:hover~button {
+    transform: translate(-10px, -20px);
+}
+
+.f10:hover~button {
+    transform: translate(-15px, -15px);
+}
+
+.f11:hover~button {
+    transform: translate(-20px, -10px);
+}
+
+.f12:hover~button {
+    transform: translate(-25px, -5px);
+}
+
+.button {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 12px;
+    gap: 8px;
+    width: fit-content;
+    height: 36px;
+    border: none;
+    outline: none;
+    background: #7758ff60;
+    border-radius: 20px;
+    pointer-events: none;
+    transition-duration: 0.1s;
+}
+
+.button:focus-visible {
+    background: #876cff4d;
+    transform: scale(105%, 105%);
+}
+
+.button:focus-visible .svg-icon {
+    animation: spin 2s linear infinite;
+}
+
+.label {
+    line-height: 20px;
+    font-size: 17px;
+    color: #9b85ff;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
