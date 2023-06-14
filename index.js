@@ -21,5 +21,5 @@ main.use("/debounce", debounce);
 main.use("/", index);
 
 main.listen(port, () => {
-    console.log(`Listening on port ${port}`)
+    console.log(`Server started at http://localhost:${port}`);
 });
