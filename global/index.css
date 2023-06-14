@@ -68,12 +68,16 @@ body {
 }
 
 /* GitHub Animation Icon */
+.github_icon_container {
+    width: fit-content;
+    margin: auto auto 25px auto;
+}
+
 .github_icon {
     display: flex;
     width: fit-content;
     padding: 5px 8px;
     margin: auto;
-    margin-bottom: 25px;
     align-items: center;
     flex-direction: row;
     font-size: 20px;
