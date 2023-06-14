@@ -1,7 +1,7 @@
 const api_url = "https://640ad5ee81d8a32198d1c6ae.mockapi.io/api/products";
 
 
-var settings = {
+var debounceSettings = {
     placeholder: "Search For Products",
     lengthLimit: 10,
     timeoutMs: 500,
@@ -21,23 +21,23 @@ window.onload = () => {
 
 timeoutTimeInput.addEventListener("input", (rawInput) => {
     log("Set suggestion timeout to: " + rawInput.target.value);
-    return settings.timeoutMs = rawInput.target.value;
+    return debounceSettings.timeoutMs = rawInput.target.value;
 });
 suggestionLimitInput.addEventListener("input", (rawInput) => {
     log("Set suggestion quantity limit to: " + rawInput.target.value);
-    return settings.lengthLimit = rawInput.target.value;
+    return debounceSettings.lengthLimit = rawInput.target.value;
 });
 debugModeInput.addEventListener("input", (rawInput) => {
     console.log("Set debug mode to: " + rawInput.target.checked);
-    return settings.debugMode = rawInput.target.checked;
+    return debounceSettings.debugMode = rawInput.target.checked;
 });
 
 input.addEventListener("focus", () => {
     const previousSelections = [...productsSelections.children];
 
-    if (settings.lengthLimit < previousSelections.length) {
+    if (debounceSettings.lengthLimit < previousSelections.length) {
         productsSelections.innerHTML = "";
-        for (var i = 0; i < settings.lengthLimit; i++) {
+        for (var i = 0; i < debounceSettings.lengthLimit; i++) {
             productsSelections.appendChild(previousSelections[i]);
         }
     }
@@ -66,7 +66,7 @@ function searchProducts(inputValue) {
     };
 
     timeoutVariable = setTimeout(async () => {
-        log(`Search for: ${inputValue}\nSelections Limit: ${settings.lengthLimit}`);
+        log(`Search for: ${inputValue}\nSelections Limit: ${debounceSettings.lengthLimit}`);
         var productsList = await api(api_url);
         productsList = productsList
             .map(product => product.name)
@@ -83,10 +83,10 @@ function searchProducts(inputValue) {
             productsSelections.innerHTML = `<li class="selection not_allowed">No Result</li>`;
         }
         else {
-            productsList.length = settings.lengthLimit;
+            productsList.length = debounceSettings.lengthLimit;
             productsSelections.innerHTML = productsList.join("");
         };
-    }, settings.timeoutMs);
+    }, debounceSettings.timeoutMs);
 }
 
 async function api(url) {
@@ -99,7 +99,7 @@ async function api(url) {
 }
 
 function log(message) {
-    if (settings.debugMode) {
+    if (debounceSettings.debugMode) {
         console.log(message);
     };
 }
