@@ -10,6 +10,89 @@ body>main {
     margin-bottom: 5vh;
 }
 
+.fields {
+    display: flex;
+    gap: 5vw;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.settings legend {
+    color: var(--brightWhite);
+    padding: 5px;
+    font-size: 25px;
+}
+
+.settings {
+    width: 100%;
+    max-width: 300px;
+    border: 2px solid var(--brightBlack);
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin-top: -20px;
+    padding: 20px 30px 30px 30px;
+    color: var(--foreground);
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.setting_container {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+:root {
+    --switch_gap: 2px;
+    --switch_width: 40px;
+    --switch_height: 20px;
+}
+
+.switch {
+    display: none;
+}
+
+.switchLabel {
+    top: 0;
+    cursor: pointer;
+    width: var(--switch_width);
+    height: var(--switch_height);
+    background: var(--brightRed);
+    display: block;
+    border-radius: 100px;
+    position: relative;
+}
+
+.switchLabel:after {
+    content: '';
+    position: absolute;
+    top: var(--switch_gap);
+    left: var(--switch_gap);
+    width: calc(var(--switch_height) - var(--switch_gap) - var(--switch_gap));
+    height: calc(var(--switch_height) - var(--switch_gap) - var(--switch_gap));
+    background: var(--brightBlack);
+    border-radius: 90px;
+    transition: 0.3s;
+}
+
+.switch:checked+.switchLabel {
+    background: var(--brightGreen);
+}
+
+.switch:checked+.switchLabel:after {
+    left: calc(100% - var(--switch_gap));
+    transform: translateX(-100%);
+}
+
 .light {
     animation: flash 0.1s infinite;
 }
@@ -32,10 +115,14 @@ body>main {
     }
 }
 
-.hoverLayer {
-    position: absolute;
+.hoverLayerContainer {
+    position: relative;
     inset: 0;
     margin: auto;
+}
+
+.hoverLayer {
+    position: relative;
     height: 120px;
     width: 240px;
     display: flex;
@@ -43,12 +130,30 @@ body>main {
     flex-direction: row;
 }
 
+.showHoverLayer {
+    border-top: 1px dashed #9b85ff80;
+    margin-top: -1px;
+    border-left: 1px dashed #9b85ff80;
+    margin-left: -1px;
+}
+
+.showHoverLayer .hoverBox {
+    border-bottom: 1px dashed #9b85ff80;
+    margin-bottom: -1px;
+    border-right: 1px dashed #9b85ff80;
+    margin-right: -1px;
+}
+
 .hoverBox {
     display: block;
     height: 20px;
     width: 20px;
     z-index: 2;
+}
+
+.showHoverBox:hover {
     transition-duration: 0.2s;
+    background-color: #9b85ff80;
 }
 
 .a1:hover~button {
